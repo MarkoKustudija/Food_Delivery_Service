@@ -2,12 +2,12 @@ import axios from 'axios';
 import { logout } from '../services/auth';
 import jwt_decode from "jwt-decode";
 
-var Food_DeliveryAxios = axios.create({
+var FoodDeliveryAxios = axios.create({
   baseURL: 'http://localhost:8080/api',
   /* other custom settings */
 });
 
-Food_DeliveryAxios.interceptors.request.use(
+FoodDeliveryAxios.interceptors.request.use(
   function success(config){
     const jwt = window.localStorage['jwt'];
     if(jwt){
@@ -24,7 +24,7 @@ Food_DeliveryAxios.interceptors.request.use(
   }
 );
 
-Food_DeliveryAxios.interceptors.response.use(
+FoodDeliveryAxios.interceptors.response.use(
   function success(response){
       return response;
   },
@@ -40,4 +40,4 @@ Food_DeliveryAxios.interceptors.response.use(
   }
 );
 
-export default Food_DeliveryAxios;
+export default FoodDeliveryAxios;
