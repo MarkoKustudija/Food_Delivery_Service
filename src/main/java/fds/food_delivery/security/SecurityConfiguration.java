@@ -62,16 +62,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		httpSecurity
 				.csrf().disable()
 				.sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-				.and()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+			/*	.and()
 				.authorizeRequests()
 				.antMatchers(HttpMethod.POST, "/api/users/auth")
 					.permitAll()
-				.antMatchers(HttpMethod.GET, "/api/tasks")
+				.antMatchers(HttpMethod.GET, "/api/orderings")
 					 .permitAll()
-				.antMatchers(HttpMethod.GET, "/api/sprints")
+				.antMatchers(HttpMethod.GET, "/api/bills")
 					 .permitAll()
-				.anyRequest().authenticated();
+				.anyRequest().authenticated();*/
 
 		// Custom JWT based authentication
 		httpSecurity.addFilterBefore(authenticationTokenFilterBean(),
@@ -82,21 +82,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public static class WebConfig implements WebMvcConfigurer {
 		@Override
 		public void addCorsMappings(CorsRegistry registry) {
-			/*registry.addMapping("/api/filmovi")
+			registry.addMapping("/api/orderings")
 					.allowedOrigins("http://localhost:3000")
 					.allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH")
 					.allowedHeaders("*")
 					.exposedHeaders("Total-Pages")
 					.allowCredentials(true)
-					.maxAge(3600);*/
+					.maxAge(3600);
 
-			registry.addMapping("/**")
+			/*registry.addMapping("/**")
 					.allowedOrigins("*")
 					.allowedMethods( "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS")
 					.allowedHeaders("Authorization","content-type")
 					.exposedHeaders("Total-Pages, Sprint-Total")
 					.allowCredentials(true)
-					.maxAge(3600);
+					.maxAge(3600);*/
 		}
 	}
 }

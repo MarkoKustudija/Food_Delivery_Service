@@ -9,7 +9,7 @@ public class BillDto {
 	private int billNumber;
 	private String date;
 	private double price;
-	private Long orderId;
+	private Long orderingId;
 	
 	
 	public BillDto() {
@@ -57,14 +57,17 @@ public class BillDto {
 	}
 
 
-	public Long getOrderId() {
-		return orderId;
+	public Long getOrderingId() {
+		return orderingId;
 	}
 
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
+	public void setOrderingId(Long orderingId) {
+		this.orderingId = orderingId;
 	}
+
+
+	
 	
 	
 	

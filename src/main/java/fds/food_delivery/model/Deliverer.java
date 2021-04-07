@@ -29,9 +29,17 @@ public class Deliverer {
 	private String nameSurname;
 	
 	@OneToMany(mappedBy = "deliverer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private Set<Order> orders = new HashSet<>();
+	private Set<Ordering> orders = new HashSet<>();
 	
-	public Deliverer(Long id, String personalNumber, String idNumber, String nameSurname, Set<Order> orders) {
+
+   
+
+	public Deliverer() {
+		super();
+	}
+	
+
+	public Deliverer(Long id, String personalNumber, String idNumber, String nameSurname, Set<Ordering> orders) {
 		super();
 		this.id = id;
 		this.personalNumber = personalNumber;
@@ -40,9 +48,6 @@ public class Deliverer {
 		this.orders = orders;
 	}
 
-	public Deliverer() {
-		super();
-	}
 
 	public Long getId() {
 		return id;
@@ -60,13 +65,16 @@ public class Deliverer {
 		this.personalNumber = personalNumber;
 	}
 
+   
 	public String getIdNumber() {
 		return idNumber;
 	}
 
+
 	public void setIdNumber(String idNumber) {
 		this.idNumber = idNumber;
 	}
+
 
 	public String getNameSurname() {
 		return nameSurname;
@@ -76,16 +84,16 @@ public class Deliverer {
 		this.nameSurname = nameSurname;
 	}
 
-	public Set<Order> getOrders() {
+	public Set<Ordering> getOrders() {
 		return orders;
 	}
 
-	public void setOrders(Set<Order> orders) {
+	public void setOrders(Set<Ordering> orders) {
 		this.orders = orders;
 	}
 
 	public void removeOrder(Long id) {
-		for(Order o : this.orders) {
+		for(Ordering o : this.orders) {
 			if(o.getId() == id) {
 				this.orders.remove(o);
 				this.removeOrder(id);
@@ -95,7 +103,7 @@ public class Deliverer {
 		
 	}
 	
-	public void addOrder(Order order) {
+	public void addOrder(Ordering order) {
 		this.orders.add(order);
 		this.setOrders(orders);
 	}

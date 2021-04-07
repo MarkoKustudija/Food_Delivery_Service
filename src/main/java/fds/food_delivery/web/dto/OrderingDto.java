@@ -4,7 +4,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 
-public class OrderDto {
+public class OrderingDto {
 
 	
 	private Long id;
@@ -20,11 +20,11 @@ public class OrderDto {
 	private Long delivererId;
 	
 	
-	public OrderDto() {
+	public OrderingDto() {
 		super();
 	}
 
-	public OrderDto(Long id, @Positive Integer orderNumber, String orderDate, @NotBlank @Max(50) String deliveryAddress,
+	public OrderingDto(Long id, @Positive Integer orderNumber, String orderDate, @NotBlank @Max(50) String deliveryAddress,
 			double price, String description, Long billId, Long delivererId) {
 		super();
 		this.id = id;

@@ -21,20 +21,21 @@ public class Bill {
 	@Column(nullable = false)
 	private double price;
 	@OneToOne
-	private Order order;
+	private Ordering ordering;
 	
 	
 	public Bill() {
 		super();
 	}
-	
-	public Bill(Long id, int billNumber, LocalDateTime date, double price, Order order) {
+
+
+	public Bill(Long id, int billNumber, LocalDateTime date, double price, Ordering ordering) {
 		super();
 		this.id = id;
 		this.billNumber = billNumber;
 		this.date = date;
 		this.price = price;
-		this.order = order;
+		this.ordering = ordering;
 	}
 
 	public Long getId() {
@@ -77,14 +78,19 @@ public class Bill {
 	}
 
 
-	public Order getOrder() {
-		return order;
+	public Ordering getOrdering() {
+		return ordering;
 	}
 
 
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setOrdering(Ordering ordering) {
+		this.ordering = ordering;
 	}
+	
+	
+
+
+	
 
 	
 

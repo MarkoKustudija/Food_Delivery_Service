@@ -18,7 +18,7 @@ public class DelivererDto {
 	private String nameSurname;
 	
 	
-	private Set<OrderDto> orders = new HashSet<>();
+	private Set<OrderingDto> orders = new HashSet<>();
 
 
 	public DelivererDto() {
@@ -45,6 +45,7 @@ public class DelivererDto {
 		this.personalNumber = personalNumber;
 	}
 
+	
 
 	public String getIdNumber() {
 		return idNumber;
@@ -66,12 +67,12 @@ public class DelivererDto {
 	}
 
 
-	public Set<OrderDto> getOrders() {
+	public Set<OrderingDto> getOrders() {
 		return orders;
 	}
 
 
-	public void setOrders(Set<OrderDto> orders) {
+	public void setOrders(Set<OrderingDto> orders) {
 		this.orders = orders;
 	}
 	

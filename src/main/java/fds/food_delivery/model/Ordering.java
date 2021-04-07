@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Order {
+public class Ordering {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -37,15 +37,15 @@ public class Order {
 	@OneToOne
 	private Bill bill;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne
 	private Deliverer deliverer;
 	
-	public Order() {
+	public Ordering() {
 		super();
 	}
 
 
-	public Order(Long id, Integer orderNumber, LocalDateTime orderDate, String deliveryAddress, double price,
+	public Ordering(Long id, Integer orderNumber, LocalDateTime orderDate, String deliveryAddress, double price,
 			String description, Bill bill, Deliverer deliverer) {
 		super();
 		this.id = id;

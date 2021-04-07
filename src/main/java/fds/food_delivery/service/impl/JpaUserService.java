@@ -52,7 +52,7 @@ public class JpaUserService implements UserService {
     }
 
     @Override
-    public Optional<User> findbyKorisnickoIme(String username) {
+    public Optional<User> findbyUserName(String username) {
         return userRepository.findFirstByUsername(username);
     }
 

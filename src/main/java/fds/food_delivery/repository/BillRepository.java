@@ -4,14 +4,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import fds.food_delivery.model.Bill;
-import fds.food_delivery.model.Order;
+import fds.food_delivery.model.Ordering;
 
 @Repository
 public interface BillRepository  extends JpaRepository<Bill, Long> {
 
 	Bill findOneById(Long id);
 
-	void save(Order order);
+	void save(Ordering order);
 	
 
 }
