@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {Route, Link, HashRouter as Router, Switch} from "react-router-dom";
-import Home from "./componenst/Home";
-import NotFound from "./componenst/NotFound";
+import Home from "./components/Home";
+import NotFound from "./components/NotFound";
 import { Container, Navbar, Nav, Button, Form } from "react-bootstrap";
-import Login from "./componenst/Login/Login";
-import Orders from "./componenst/orders/Orders";
-import EdditOrder from "./componenst/orders/EdditOrder";
+import Login from "./components/Login/Login";
+import {logout} from "./services/auth";
+import Orders from "./components/orders/Orders";
+import EdditOrder from "./components/orders/EdditOrder";
 
 class App extends React.Component {
     render(){

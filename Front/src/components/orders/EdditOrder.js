@@ -91,58 +91,58 @@ class EditOrder extends React.Component{
         
         this.setState({order: order});
         }
-    }
-    render(){
+    
+    render() {
      return(
-         <di>
+         <div>
            <h1> Order </h1>
 
          <Form>
-           <FormGroup>
+           <Form.Group>
            <Form.Label> Order number </Form.Label>
            <Form.Control
            onChange = {(event) => this.valueInputChange(event)}
            name = "orderNumber"
            value = {this.state.order.orderNumber}
            as = "input"
-           ></FormControl>
-           </FormGroup>
-           <FormGroup>
+           ></Form.Control>
+           </Form.Group>
+           <Form.Group>
            <Form.Label> Date </Form.Label>
            <Form.Control
            onChange = {(event) => this.valueInputChange(event)}
            name = "date"
            value = {this.state.order.date}
            as = "select"
-           ></FormControl>
-           </FormGroup>
-           <FormGroup>
+           ></Form.Control>
+           </Form.Group>
+           <Form.Group>
            <Form.Label> Delivery address </Form.Label>
            <Form.Control
            onChange = {(event) => this.valueInputChange(event)}
            name = "address"
            value = {this.state.order.address}
            as = "input"
-           ></FormControl>
-           </FormGroup>
-           <FormGroup>
+           ></Form.Control>
+           </Form.Group>
+           <Form.Group>
            <Form.Label> Order price</Form.Label>
            <Form.Control
            onChange = {(event) => this.valueInputChange(event)}
            name = "price"
            value = {this.state.order.price}
            as = "input"
-           ></FormControl>
-           </FormGroup>
-           <FormGroup>
+           ></Form.Control>
+           </Form.Group>
+           <Form.Group>
            <Form.Label> Description</Form.Label>
            <Form.Control
            onChange = {(event) => this.valueInputChange(event)}
            name = "description"
            value = {this.state.order.description}
            as = "input"
-           ></FormControl>
-           </FormGroup>
+           ></Form.Control>
+           </Form.Group>
            <Form.Group>
             <Form.Label>Deliverer</Form.Label>
             <Form.Control
